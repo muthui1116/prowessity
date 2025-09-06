@@ -1,0 +1,14 @@
+/* NAVIGATION BAR */
+.navbar {
+  background-color: #efefefe3;
+  padding: 0.5% 2%;
+}
+
+/* HOME PAGE */
+.productCard {
+padding: 0.5% 2%;
+}
+
+/* // Apply theme to body as a data attribute (CSS can use [data-theme="color"]) */
+[data-theme="light"] {background: #fff;color: #222;}
+[data-theme="dark"] {background: #222; color: #eee;}
