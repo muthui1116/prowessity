@@ -2,52 +2,28 @@ import { sql } from "../config/db.js";
 
 const SAMPLE_PRODUCTS = [
   {
-    name: "Premium Wireless Headphones",
-    price: 299.99,
+    name: "Web Development",
+    price: 90000,
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60",
+      "https://media.istockphoto.com/id/2206652863/photo/blue-global-technology-concept.jpg?s=612x612&w=0&k=20&c=pX6Nc80VjSVfIvcPWzS2kPoA92AC0GYOpBvst3x3iBs=",
   },
   {
-    name: "Mechanical Gaming Keyboard",
-    price: 159.99,
+    name: "Data Analysis",
+    price: 25000,
     image:
-      "https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=800&auto=format&fit=crop&q=60",
+      "https://plus.unsplash.com/premium_photo-1661384232357-3378425af882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTkxfHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8MHx8fDA%3D",
   },
   {
-    name: "Smart Watch Pro",
-    price: 249.99,
+    name: "Digital Marketing",
+    price: 25000,
     image:
-      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&auto=format&fit=crop&q=60",
+      "https://media.istockphoto.com/id/2204337768/photo/digital-marketing-development-and-goals-strategy-attract-organic-traffic-for-big-sales.jpg?s=612x612&w=0&k=20&c=Q4Jq4yQ0FTLlT7C-Nbc2dH3CRYRzfDOshgJDYmIT-hI=",
   },
   {
-    name: "4K Ultra HD Camera",
-    price: 899.99,
+    name: "Mobile App Development",
+    price: 30000,
     image:
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&auto=format&fit=crop&q=60",
-  },
-  {
-    name: "Minimalist Backpack",
-    price: 79.99,
-    image:
-      "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&auto=format&fit=crop&q=60",
-  },
-  {
-    name: "Wireless Gaming Mouse",
-    price: 89.99,
-    image:
-      "https://images.unsplash.com/photo-1527814050087-3793815479db?w=800&auto=format&fit=crop&q=60",
-  },
-  {
-    name: "Smart Home Speaker",
-    price: 159.99,
-    image:
-      "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=800&auto=format&fit=crop&q=60",
-  },
-  {
-    name: "LED Gaming Monitor",
-    price: 449.99,
-    image:
-      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
   },
 ];
 
