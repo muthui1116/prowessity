@@ -8,6 +8,7 @@ import {Toaster} from "react-hot-toast"
 
 import ThemeToggle from "./components/ThemeToggle";
 import useThemeStore from "./store/useThemeStore";
+import WebDevelopmentPage from "./pages/WebDevelopmentPage";
 
 
 function App() {
@@ -16,13 +17,11 @@ function App() {
     <>
       <div className={`bg-${theme}`}>
         <Navbar />
-
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/" element={<ThemeToggle />} />
+          <Route path="/web-dev" element={<WebDevelopmentPage />} />
         </Routes>
-
         <Toaster />
       </div>
     </>

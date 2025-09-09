@@ -29,8 +29,9 @@ const AssesmentList = () => {
                   <span className="fw-semibold">Price:</span> ${product.price}
                 </p>
                 <div className="mt-auto d-flex justify-content-between align-items-center">
-                  <a href="#" className="btn btn-primary btn-sm">View Product</a>
-                  <div>
+                  <Link to={`/${product.link}`} className="btn btn-primary btn-sm">
+                    View Details
+                  </Link>        <div>
                     <Link to={`/product/${product.id}`}>
                       <button className="btn btn-outline-secondary btn-sm me-2" title="Edit">
                         <FaEdit />

@@ -3,25 +3,22 @@ import { sql } from "../config/db.js";
 const SAMPLE_PRODUCTS = [
   {
     name: "Web Development",
-    price: 90000,
+    price: 900,
+    link: "web-dev",
     image:
       "https://media.istockphoto.com/id/2206652863/photo/blue-global-technology-concept.jpg?s=612x612&w=0&k=20&c=pX6Nc80VjSVfIvcPWzS2kPoA92AC0GYOpBvst3x3iBs=",
   },
   {
     name: "Data Analysis",
-    price: 25000,
+    price: 250,
+    link: "data-analysis",
     image:
       "https://plus.unsplash.com/premium_photo-1661384232357-3378425af882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTkxfHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8MHx8fDA%3D",
   },
   {
-    name: "Digital Marketing",
-    price: 25000,
-    image:
-      "https://media.istockphoto.com/id/2204337768/photo/digital-marketing-development-and-goals-strategy-attract-organic-traffic-for-big-sales.jpg?s=612x612&w=0&k=20&c=Q4Jq4yQ0FTLlT7C-Nbc2dH3CRYRzfDOshgJDYmIT-hI=",
-  },
-  {
     name: "Mobile App Development",
-    price: 30000,
+    price: 900,
+    link: "mobile-app-deveopment",
     image:
       "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW9iaWxlJTIwYXBwJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
   },
@@ -35,8 +32,8 @@ async function seedDatabase() {
     // insert all products
     for (const product of SAMPLE_PRODUCTS) {
       await sql`
-        INSERT INTO products (name, price, image)
-        VALUES (${product.name}, ${product.price}, ${product.image})
+        INSERT INTO products (name, price, image, link)
+        VALUES (${product.name}, ${product.price}, ${product.image}, ${product.link})
       `;
     }
 
