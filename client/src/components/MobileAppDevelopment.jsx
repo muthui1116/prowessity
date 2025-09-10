@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";
 
 const curriculum = [
     {
@@ -70,7 +69,6 @@ const MobileAppDevelopmentBootcamp = () => {
 
     return (
         <>
-            <Navbar />
             <div className="container course-description">
                 <h1>Mobile App Development Bootcamp</h1>
                 <p style={{ fontWeight: "bold", fontSize: "1.2em" }}>
