@@ -18,7 +18,7 @@ function AddProductModal() {
                 <div className="modal-content">
                     {/* CLOSE BUTTON & HEADER */}
                     <div className="modal-header">
-                        <h5 className="modal-title fw-bold" id="addProductModalLabel">Add New Product</h5>
+                        <h5 className="modal-title fw-bold" id="addProductModalLabel">Add New Course</h5>
                         <button
                             type="button"
                             className="btn-close"
@@ -32,7 +32,7 @@ function AddProductModal() {
                             {/* PRODUCT NAME INPUT */}
                             <div className="mb-4 position-relative">
                                 <label htmlFor="productName" className="form-label fw-medium">
-                                    Product Name
+                                    Course Name
                                 </label>
                                 <span
                                     className="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"
@@ -103,7 +103,7 @@ function AddProductModal() {
                                 Cancel
                             </button>
                             <button type="submit" className="btn btn-primary">
-                                Add Product
+                                Add Course
                             </button>
                         </div>
                     </form>

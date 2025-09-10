@@ -64,7 +64,7 @@ function ProductPage() {
         className="btn btn-outline-secondary mb-4 d-flex align-items-center"
       >
         <FaArrowLeft className="me-2" />
-        Back to Products
+        Back to Courses
       </button>
       {/* Bootstrap row with two columns: image and update info */}
       <div className="row g-0 align-items-stretch" style={{ minHeight: '400px' }}>
@@ -92,7 +92,7 @@ function ProductPage() {
                   {/* PRODUCT NAME */}
                   <div className="mb-2">
                     <label className="form-label">
-                      Product Name
+                      Course Name
                     </label>
                     <input
                       type="text"
