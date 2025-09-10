@@ -20,7 +20,7 @@ function HomePage() {
         <a className="navbar-brand" href="#">
           <button className="btn btn-outline-secondary rounded-5 " data-bs-toggle="modal"
             data-bs-target="#add_product_modal" onClick={() => document.getElementById("add_product_modal")}>
-            Add Product
+            Add Course
           </button>
         </a>
         <ul className="navbar-nav ms-auto">

@@ -29,9 +29,17 @@ const AssesmentList = () => {
                   <span className="fw-semibold">Price:</span> ${product.price}
                 </p>
                 <div className="mt-auto d-flex justify-content-between align-items-center">
-                  <Link to={`/${product.link}`} className="btn btn-primary btn-sm">
-                    View Details
-                  </Link>        <div>
+                  <div>
+                    {/* Dynamic route for Instructor */}
+                    <Link to={`/${product.instructor}`} className="btn btn-primary btn-sm me-2">
+                      Instructor
+                    </Link>
+                    {/* Dynamic route for Learner */}
+                    <Link to={`/${product.learner}`} className="btn btn-success btn-sm me-2">
+                      Learner
+                    </Link>
+                  </div>
+                  <div>
                     <Link to={`/product/${product.id}`}>
                       <button className="btn btn-outline-secondary btn-sm me-2" title="Edit">
                         <FaEdit />

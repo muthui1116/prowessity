@@ -15,16 +15,16 @@ export const getProducts = async (req, res) => {
 }
 
 export const createProduct = async (req, res) => {
-    const { name, price, image, link } = req.body
+    const { name, price, image, learner } = req.body
 
-    if (!name || !price || !image || !link) {
+    if (!name || !price || !image || !learner || !instructor) {
         return res.status(400).json({ success: false, message: "All fields are required" })
     }
 
     try {
         const newProduct = await sql`
-            INSERT INTO products (name, price, image, link)
-            VALUES (${name}, ${price}, ${image}, ${link})
+            INSERT INTO products (name, price, image, learner, instructor, instructor)
+            VALUES (${name}, ${price}, ${image}, ${learner}, ${instructor})
             RETURNING *
         `;
         console.log("new product added:", newProduct);
@@ -58,7 +58,7 @@ export const updateProduct = async (req, res) => {
     try {
         const updateProduct = await sql`
             UPDATE products
-            SET name=${name}, price=${price}, image=${image}, link=${link}
+            SET name=${name}, price=${price}, image=${image}, learner=${learner}, instructor=${instructor}
             WHERE id=${id}
             RETURNING *
         `;

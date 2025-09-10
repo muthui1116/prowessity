@@ -12,9 +12,10 @@ import ThemeToggle from "./components/ThemeToggle";
 import useThemeStore from "./store/useThemeStore";
 
 //LINKS
-import WebDevelopmentBootcamp from './components/WebDevelopmentBootcamp'
+import MobileAppDevelopmentBootcamp from './components/StudentDashboardWithSidebar'
 import DataAnalysisBootcamp from "./components/DataAnalysisBootcamp";
-import MobileAppDevelopmentBootcamp from "./components/MobileAppDevelopment";
+import StudentDashboardWithSidebar from "./components/StudentDashboardWithSidebar";
+import InstructorDashboardWithSidebar from "./components/InstructorDashboardWithSidebar";
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/web-dev" element={<WebDevelopmentBootcamp />} />
+          <Route path="/web-dev" element={<StudentDashboardWithSidebar />} />
+           <Route path="/web-de" element={<InstructorDashboardWithSidebar />} />
           <Route path="/data-analysis" element={<DataAnalysisBootcamp />} />
           <Route path="mobile-app-deveopment" element={<MobileAppDevelopmentBootcamp />} />
         </Routes>
