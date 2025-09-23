@@ -3,7 +3,7 @@ import { useProductStore } from "../store/useProductStore";
 import { GoPackage } from "react-icons/go";
 import AssesmentList from "../components/AssesmentList";
 import AddProductModal from "../components/AddProductModal";
-
+import { RegisterForm } from "../components/RegisterForm";
 
 function HomePage() {
   const { products, loading, error, fetchProducts } = useProductStore();
@@ -16,13 +16,16 @@ function HomePage() {
 
   return (
     <>
+   
       <nav className="navbar navbar-expand-lg bg-transparent">
         <a className="navbar-brand" href="#">
           <button className="btn btn-outline-secondary rounded-5 " data-bs-toggle="modal"
             data-bs-target="#add_product_modal" onClick={() => document.getElementById("add_product_modal")}>
             Add Course
+            <a href="/reg">welcome</a>
           </button>
         </a>
+        <a href="/c">courses</a>
         <ul className="navbar-nav ms-auto">
           <button
             className="btn btn-outline-secondary btn-circle"
@@ -80,6 +83,7 @@ function HomePage() {
         ) : (
           <div className="">
             <AssesmentList />
+            <RegisterForm />
           </div>
         )}
       </main>

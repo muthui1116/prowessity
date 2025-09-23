@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar";
 
 import { Routes, Route } from "react-router-dom";
-import {Toaster} from "react-hot-toast"
+import { Toaster } from "react-hot-toast"
 
 //PAGES
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
+import HomePageRoute from "./pages/HomePageRoute";
 
 //STATE MANAGEMENT
 import ThemeToggle from "./components/ThemeToggle";
@@ -16,6 +17,11 @@ import MobileAppDevelopmentBootcamp from './components/StudentDashboardWithSideb
 import DataAnalysisBootcamp from "./components/DataAnalysisBootcamp";
 import StudentDashboardWithSidebar from "./components/StudentDashboardWithSidebar";
 import InstructorDashboardWithSidebar from "./components/InstructorDashboardWithSidebar";
+import {RegisterForm} from "./components/RegisterForm";
+import {LoginForm} from "./components/LoginForm";
+import { CourseDetails } from "./components/CourseDetails"
+
+
 
 
 function App() {
@@ -25,12 +31,17 @@ function App() {
       <div className={`bg-${theme}`}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/web-dev" element={<StudentDashboardWithSidebar />} />
-           <Route path="/web-de" element={<InstructorDashboardWithSidebar />} />
+          <Route path="/web-de" element={<InstructorDashboardWithSidebar />} />
           <Route path="/data-analysis" element={<DataAnalysisBootcamp />} />
           <Route path="mobile-app-deveopment" element={<MobileAppDevelopmentBootcamp />} />
+
+          <Route path="/" element={<HomePageRoute />} />
+          <Route path="/r" element={<RegisterForm />} />
+          <Route path="/l" element={<LoginForm />} />
+          <Route path="/courses/:id" element={<CourseDetails />} />
         </Routes>
         <Toaster />
       </div>

@@ -3,7 +3,10 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import productRoutes from './routes/productRoutes.js';
+import session from 'express-session';
+
+import courseRoutes from './routes/authRoutes.js'
+import productRoutes from './routes/productRoutes.js'
 import path from "path";
 
 import { sql } from './config/db.js';
@@ -53,9 +56,17 @@ app.use(async (req, res, next) => {
   }
 });
 
-app.use("/api/products", productRoutes);
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-secret',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false } // set true if using HTTPS
+}));
 
-if (process.env.NODE_ENV==="production") {
+app.use('/api/products', productRoutes);
+app.use('/api/courses', courseRoutes);
+
+if (process.env.NODE_ENV === "production") {
   //server our react app
   app.use(express.static(path.join(__dirname, "/client/dist")))
 
@@ -65,18 +76,16 @@ if (process.env.NODE_ENV==="production") {
 }
 
 async function initDB() {
-  try {
+try {
     await sql`
-      CREATE TABLE IF NOT EXISTS products (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        learner VARCHAR(255) NOT NULL,
-        instructor VARCHAR(255) NOT NULL,
-        image VARCHAR(255) NOT NULL,
-        price DECIMAL(10, 2) NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )
-    `;
+     CREATE TABLE IF NOT EXISTS products (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(255),
+      email VARCHAR(255) NOT NULL,
+      password DECIMAL(10, 2) NOT NULL,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `;
     console.log("Database initialized successfully");
   } catch (error) {
     console.log("Error initDB", error);
