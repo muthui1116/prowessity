@@ -26,17 +26,22 @@ function HomePage() {
             Add Course
           </button>
         </a>
-        <form className="d-flex ms-auto" role="search">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button className="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
+       <form className="d-flex ms-auto" role="search">
+  <input
+    className="form-control me-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    style={{ width: "100px" }} // adjust as needed
+  />
+  <button
+    className="btn btn-outline-success"
+    type="submit"
+    style={{ width: "70px" }} // adjust as needed
+  >
+    Search
+  </button>
+</form>
       </nav>
 
       <AddProductModal />
