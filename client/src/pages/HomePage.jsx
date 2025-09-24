@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useProductStore } from "../store/useProductStore";
 import { GoPackage } from "react-icons/go";
 import AssesmentList from "../components/AssesmentList";
-import AuthButtons from "../components/AuthButtons";
 import AddProductModal from "../components/AddProductModal";
 
 function HomePage() {
@@ -15,7 +14,7 @@ function HomePage() {
   }, []);
 
   return (
-    <div className="bg-transparent">
+    <>
       <nav className="navbar navbar-expand-lg bg-transparent">
         <a className="navbar-brand" href="#">
           <button
@@ -27,9 +26,17 @@ function HomePage() {
             Add Course
           </button>
         </a>
-        <div className="ms-auto d-flex align-items-center">
-          <AuthButtons />
-        </div>
+        <form className="d-flex ms-auto" role="search">
+          <input
+            className="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button className="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form>
       </nav>
 
       <AddProductModal />
@@ -69,7 +76,7 @@ function HomePage() {
           </div>
         )}
       </main>
-    </div>
+    </>
   );
 }
 
