@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 
 export function LoginForm() {
@@ -28,7 +28,7 @@ export function LoginForm() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center mt-4">
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
       <form
         onSubmit={handleSubmit}
         className="p-4 border rounded shadow bg-white"
@@ -62,6 +62,13 @@ export function LoginForm() {
           {loading ? "Logging in..." : "Login"}
         </button>
         {error && <div className="alert alert-danger mt-3">{error}</div>}
+        
+        <p className="text-center mt-3 mb-0">
+          Not registered?{" "}
+          <Link to="/register">
+            <span className="text-primary">Sign up</span>
+          </Link>
+        </p>
       </form>
     </div>
   );

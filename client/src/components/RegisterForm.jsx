@@ -20,7 +20,7 @@ export function RegisterForm() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center mt-4">
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
       <form
         onSubmit={handleSubmit}
         className="p-4 border rounded shadow bg-white"

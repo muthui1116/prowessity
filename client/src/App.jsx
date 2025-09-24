@@ -35,10 +35,8 @@ function App() {
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/web-dev" element={<StudentDashboardWithSidebar />} />
           <Route path="/web-de" element={<InstructorDashboardWithSidebar />} />
-          <Route path="/data-analysis" element={<DataAnalysisBootcamp />} />
-          <Route path="mobile-app-deveopment" element={<MobileAppDevelopmentBootcamp />} />
-
-          <Route path="/" element={<HomePageRoute />} />
+         
+          <Route path="/" element={<HomePage />} />
           <Route path="/r" element={<RegisterForm />} />
           <Route path="/l" element={<LoginForm />} />
           <Route path="/courses/:id" element={<CourseDetails />} />

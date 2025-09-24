@@ -7,7 +7,7 @@ const AssesmentList = () => {
   const { products, deleteProduct } = useProductStore();
 
   return (
-    <div className="productCard">
+    <div className="productCard min-vh-100">
       <div className="row">
         {products.map((product) => (
           <div className="col-12 col-md-6 col-lg-3 mb-3" key={product.id}>

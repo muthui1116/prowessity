@@ -6,7 +6,12 @@
 
 .prowessity-logo{
  height: 26px;
- margin: 0 0 0 20px;
+ margin-left: 8px;
+}
+
+.bg-transparent{
+  /* background-color: #00000000; Black, fully transparent */
+background-color: #ffffff00; /* White, fully transparent */
 }
 
 /* HOME PAGE */

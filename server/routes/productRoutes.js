@@ -3,15 +3,11 @@ import { createProduct, getProducts, getProduct, updateProduct, deleteProduct } 
 
 const router = express.Router();
 
-// router.get("/", getProducts);
+// Product routes
+router.get('/', getProducts);           // Get all products
+router.post('/', createProduct);        // Create a new product
+router.get('/:id', getProduct);         // Get a single product by ID
+router.put('/:id', updateProduct);      // Update a product by ID
+router.delete('/:id', deleteProduct);   // Delete a product by ID
 
-
-router.post('/', createProduct);
-router.post('/login', getProduct);
-
-
-router.get('/:id', getProduct);
-router.put('/:id', updateProduct);
-router.delete('/:id', deleteProduct);
-
-export default router
+export default router;
