@@ -14,7 +14,7 @@ export const getProducts = async (req, res) => {
 }
 
 export const createProduct = async (req, res) => {
-    const { name, price, image, learner } = req.body
+    const { name, price, image, learner, instructor } = req.body
 
     if (!name || !price || !image || !learner || !instructor) {
         return res.status(400).json({ success: false, message: "All fields are required" })
@@ -23,8 +23,7 @@ export const createProduct = async (req, res) => {
     try {
         const newProduct = await sql`
             INSERT INTO products (name, price, image, learner, instructor)
-            VALUES (${name}, ${price}, ${image}, ${learner}, ${instructor})
-            RETURNING *
+            VALUES (${name}, ${price}, ${image}, ${learner}, ${instructor}) RETURNING *
         `;
         console.log("new product added:", newProduct);
         res.status(201).json({ success: true, data: newProduct[0] });

@@ -76,21 +76,49 @@ if (process.env.NODE_ENV === "production") {
 }
 
 async function initDB() {
-try {
+  try {
     await sql`
-     CREATE TABLE IF NOT EXISTS products (
-      id SERIAL PRIMARY KEY,
-      name VARCHAR(255),
-      email VARCHAR(255) NOT NULL,
-      password DECIMAL(10, 2) NOT NULL,
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
-  `;
+      CREATE TABLE IF NOT EXISTS users (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255),
+        email VARCHAR(255) NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )`;
+    console.log("Database initialized successfully");
+  } catch (error) {
+    console.log("Error initDB", error);
+  }
+
+  try {
+    await sql`
+      CREATE TABLE IF NOT EXISTS products (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255),
+        price DECIMAL(10, 2) NOT NULL,
+        learner VARCHAR(255) NOT NULL,
+        instructor VARCHAR(255) NOT NULL,
+        image VARCHAR(255) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )`;
+    console.log("Database initialized successfully");
+  } catch (error) {
+    console.log("Error initDB", error);
+  }
+
+  try {
+    await sql`
+      CREATE TABLE IF NOT EXISTS controller(
+        users_id INTEGER REFERENCES users(id),
+        products_id INTEGER REFERENCES products(id),
+        PRIMARY KEY (users_id, products_id)
+    )`;
     console.log("Database initialized successfully");
   } catch (error) {
     console.log("Error initDB", error);
   }
 }
+
 
 initDB().then(() => {
   app.listen(PORT, () => {

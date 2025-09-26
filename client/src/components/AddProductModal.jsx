@@ -72,6 +72,49 @@ function AddProductModal() {
                                     onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                                 />
                             </div>
+
+                            {/* LEARNER  INPUT  */}
+                            <div className="mb-4 position-relative">
+                                <label htmlFor="productPrice" className="form-label fw-medium">
+                                    Learner
+                                </label>
+                                <span
+                                    className="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"
+                                    style={{ pointerEvents: "none" }}
+                                >
+                                    <FaDollarSign size={20} />
+                                </span>
+                                <input
+                                    id="learner"
+                                    type="text"
+                                    placeholder="Enter Learner Name"
+                                    className="form-control ps-5 py-3"
+                                    value={formData.learner}
+                                    onChange={(e) => setFormData({ ...formData, learner: e.target.value })}
+                                />
+                            </div>
+
+                             {/* INSTUCTOR  INPUT  */}
+                            <div className="mb-4 position-relative">
+                                <label htmlFor="productPrice" className="form-label fw-medium">
+                                    Instructor
+                                </label>
+                                <span
+                                    className="position-absolute top-50 start-0 translate-middle-y ps-3 text-secondary"
+                                    style={{ pointerEvents: "none" }}
+                                >
+                                    <FaDollarSign size={20} />
+                                </span>
+                                <input
+                                    id="instructor"
+                                    type="text"
+                                    placeholder="Enter Insructor Name"
+                                    className="form-control ps-5 py-3"
+                                    value={formData.instructor}
+                                    onChange={(e) => setFormData({ ...formData, instructor: e.target.value })}
+                                />
+                            </div>
+
                             {/* PRODUCT IMAGE  */}
                             <div className="mb-4 position-relative">
                                 <label htmlFor="productImage" className="form-label fw-medium">
